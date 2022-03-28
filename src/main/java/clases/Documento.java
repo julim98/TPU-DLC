@@ -27,6 +27,9 @@ public class Documento {
         this.nombre = nombre;
     }
 
-
-
+    @Override
+    public String toString() {
+        return  "path: '" + path + '\'' +
+                ", nombre: '" + nombre + '\'';
+    }
 }

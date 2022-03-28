@@ -2,12 +2,31 @@ package clases;
 
 public class Posteo {
 
+    private Vocabulario vocabulario;
+    private Documento documento;
     private int frecuencia;
     private double peso;
 
-    public Posteo(int frecuencia, float peso) {
+    public Posteo(Vocabulario vocabulario, Documento documento, int frecuencia) {
+        this.vocabulario = vocabulario;
+        this.documento = documento;
         this.frecuencia = frecuencia;
-        this.peso = peso;
+    }
+
+    public Vocabulario getVocabulario() {
+        return vocabulario;
+    }
+
+    public void setVocabulario(Vocabulario vocabulario) {
+        this.vocabulario = vocabulario;
+    }
+
+    public Documento getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(Documento documento) {
+        this.documento = documento;
     }
 
     public int getFrecuencia() {
@@ -22,11 +41,12 @@ public class Posteo {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
     public void calcularPeso(int N, int n){
+
         this.peso = ((this.frecuencia * Math.log((double) N/n))/(Math.sqrt(Math.pow(suma(N, n), 2))));
     }
 
