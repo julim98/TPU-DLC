@@ -12,7 +12,7 @@ public class Indexar {
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
 
-        Scanner doc;
+        Scanner docScan;
         File carpeta = new File("D:\\Documents\\FACULTAD\\4°Año\\Diseño de Lenguajes de Consulta\\Trabajo Practico\\DocumentosTP1\\");
 
         HashSet<Documento> documentos = new HashSet<>();
@@ -28,13 +28,13 @@ public class Indexar {
         for (int i = 0; i < 2; i++) {
             File docFile = requireNonNull[i];
             vocabularioAux = new Hashtable<>();
+            Documento documento = new Documento(docFile.getPath(), docFile.getName());
+            documentos.add(documento);
+            docScan = new Scanner(docFile);
 
-            documentos.add(new Documento(docFile.getPath(), docFile.getName()));
-            doc = new Scanner(docFile);
+            while (docScan.hasNext()) {
 
-            while (doc.hasNext()) {
-
-                palabra = doc.next();
+                palabra = docScan.next();
                 int key = palabra.hashCode();
 
                 if (vocabularioAux.containsKey(key)) {
@@ -71,8 +71,8 @@ public class Indexar {
             }else {
                 vocabulario = new Hashtable<>(vocabularioAux);
             }
-
         }
+
 
         //Recorre todos lo documentos
        /* for (File docFile: Objects.requireNonNull(carpeta.listFiles())) {
