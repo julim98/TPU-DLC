@@ -4,43 +4,96 @@ import clases.Documento;
 import clases.Posteo;
 import clases.Vocabulario;
 
+import javax.swing.*;
+import java.awt.*;
+import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Indexar {
+
+    private static HashSet<Documento> documentos = new HashSet<>();
+    private static Hashtable<Integer,Vocabulario> vocabularioAux;
+    private static Hashtable<Integer,Vocabulario> vocabulario = new Hashtable<>();
+    private static HashSet<Posteo> posteos = new HashSet<>();
+
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
+        Scanner scanner = new Scanner(System.in);
+        indexar();
+
+        while (true) {
+            System.out.println("Opciones\n");
+            System.out.println("1 - Mostrar vocabulario");
+            System.out.println("2 - Mostrar Documentos");
+            System.out.println("3 - Mostrar Posteos");
+            System.out.println("4 - Salir");
+
+            System.out.print("\nIngrese una opcion: ");
+            int opcion = scanner.nextInt();
+            System.out.println("\n");
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Vocabulario: \n");
+                    vocabulario.forEach((integer, terminos) -> System.out.println());
+                    System.out.println("Cantidad de Terminos: " + vocabulario.size());
+                    break;
+                case 2:
+                    System.out.println("Documentos: \n");
+                    documentos.forEach(System.out::println);
+                    System.out.println("Cantidad de documentos: " + documentos.size());
+                    break;
+                case 3:
+                    System.out.println("Posteos: \n");
+                    posteos.forEach(System.out::println);
+                    System.out.println("Cantidad de Posteos: " + posteos.size());
+                    break;
+                default:
+                    return;
+            }
+        }
+    }
+
+    public static void indexar() throws FileNotFoundException {
 
         Scanner docScan;
-        File carpeta = new File("D:\\Documents\\FACULTAD\\4°Año\\Diseño de Lenguajes de Consulta\\Trabajo Practico\\DocumentosTP1\\");
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        fileChooser.showOpenDialog(fileChooser);
+        String ruta = fileChooser.getCurrentDirectory().getPath();
 
-        HashSet<Documento> documentos = new HashSet<>();
-        Hashtable<Integer,Vocabulario> vocabularioAux = new Hashtable<>();
-        Hashtable<Integer,Vocabulario> vocabulario = new Hashtable<>();
-        //HashSet<String> palabras = new HashSet<>();
-        HashSet<Posteo> posteos = new HashSet<>();
+        File carpeta = new File(ruta);
 
         String palabra;
 
+        System.out.println("Comenzando la indexacion de lo documentos\n" +
+                "Por favor espere mientras se completa");
+
+        int i = 0;
         //Recorre un solo doc
-        File[] requireNonNull = Objects.requireNonNull(carpeta.listFiles());
-        for (int i = 0; i < 2; i++) {
-            File docFile = requireNonNull[i];
+        for (File docFile: Objects.requireNonNull(carpeta.listFiles())) {
+
             vocabularioAux = new Hashtable<>();
             Documento documento = new Documento(docFile.getPath(), docFile.getName());
             documentos.add(documento);
             docScan = new Scanner(docFile);
 
+            //System.out.println("Comenzando lectuda del ducumento n°: "+ i + " " + docFile.getName());
+            i++;
             while (docScan.hasNext()) {
 
                 palabra = docScan.next();
                 int key = palabra.hashCode();
 
+
                 if (vocabularioAux.containsKey(key)) {
                     vocabularioAux.get(key).increaseMaxFrec();
                 } else {
-                    vocabularioAux.put(key, new Vocabulario(palabra));
+                    Vocabulario newTermino = new Vocabulario(palabra);
+                    vocabularioAux.put(key, newTermino);
+                    posteos.add(new Posteo(newTermino, documento));
                 }
             }
 
@@ -72,64 +125,5 @@ public class Indexar {
                 vocabulario = new Hashtable<>(vocabularioAux);
             }
         }
-
-
-        //Recorre todos lo documentos
-       /* for (File docFile: Objects.requireNonNull(carpeta.listFiles())) {
-            documentos.add(new Documento(docFile.getPath(), docFile.getName()));
-            doc = new Scanner(docFile.getPath());
-
-            while (doc.hasNext()){
-                palabra = doc.next();
-                int key = palabra.hashCode();
-
-                if (vocabularioAux.containsKey(key)){
-                    Vocabulario voc = vocabularioAux.get(key);
-                    voc.increaseCantDoc();
-                    voc.increaseMaxFrec();
-                }
-                else {
-                    vocabularioAux.put(key, new Vocabulario(palabra));
-                }
-            }
-        }*/
-
-        System.out.println("Cantidad de documentos: " + documentos.size());
-
-        System.out.println("\nDocumentos");
-        for (Documento documento: documentos) {
-            System.out.println(documento);
-        }
-
-
-        System.out.println("\nVocabulario tamaño");
-        System.out.println(vocabulario.size());
-
-
-        System.out.println("\nVocabulario");
-        for (Vocabulario voc: vocabulario.values()) {
-            System.out.println(voc);
-        }
-
-
-
-      /*  HashSet setWords = new HashSet();
-
-        for (File doc: Objects.requireNonNull(carpeta.listFiles())){
-
-            System.out.println(doc.getName());
-            Scanner documento = new Scanner(doc);
-
-
-            while (documento.hasNext()) {
-                //System.out.println("\t" + documento.next());
-                setWords.add(documento.next());
-            }
-        }
-
-        System.out.println("cant palabras: " + setWords.size());
-
-        setWords.forEach(System.out::println);
-        */
     }
 }

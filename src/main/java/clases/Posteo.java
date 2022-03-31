@@ -7,10 +7,11 @@ public class Posteo {
     private int frecuencia;
     private double peso;
 
-    public Posteo(Vocabulario vocabulario, Documento documento, int frecuencia) {
+    public Posteo(Vocabulario vocabulario, Documento documento) {
         this.vocabulario = vocabulario;
         this.documento = documento;
-        this.frecuencia = frecuencia;
+        this.frecuencia = 1;
+        this.peso = 0;
     }
 
     public Vocabulario getVocabulario() {
@@ -52,5 +53,14 @@ public class Posteo {
 
     public double suma(int N, int n){
         return frecuencia * Math.log((double) N/n);
+    }
+
+
+    @Override
+    public String toString() {
+        return  "vocabulario: " + vocabulario.getPalabra() +
+                ", documento: " + documento.getNombre() +
+                ", frecuencia: " + frecuencia +
+                ", peso=" + peso ;
     }
 }
