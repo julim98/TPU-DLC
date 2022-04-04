@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Microsoft SQL Server">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.32">
+    <root id="1">
+      <Grants>2|||2|connect|G
+3|||2|connect|G
+4|||2|connect|G
+5|||2|connect|G
+0|root||264|alter any availability group|G
+0|root||265|alter any event session|G
+0|root||102|authenticate server|G
+0|root||103|authenticate server|G
+0|root||265|connect any database|G
+0|root||1|connect sql|G
+0|root||256|connect sql|G
+0|root||257|connect sql|G
+0|root||258|connect sql|G
+0|root||259|connect sql|G
+0|root||260|connect sql|G
+0|root||261|connect sql|G
+0|root||262|connect sql|G
+0|root||263|connect sql|G
+0|root||264|connect sql|G
+0|root||265|connect sql|G
+0|root||266|connect sql|G
+0|root||105|control server|G
+0|root||2|view any database|G
+0|root||101|view any definition|G
+0|root||102|view any definition|G
+0|root||105|view any definition|G
+0|root||106|view any definition|G
+0|root||257|view any definition|G
+0|root||265|view any definition|G
+0|root||102|view server state|G
+0|root||257|view server state|G
+0|root||264|view server state|G
+0|root||265|view server state|G</Grants>
+      <PermissionsCheckSum>45586761308</PermissionsCheckSum>
+      <ServerVersion>14.0.1000</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="DLC">
+      <ObjectId>7</ObjectId>
+    </database>
+    <database id="3" parent="1" name="GDA">
+      <ObjectId>9</ObjectId>
+    </database>
+    <database id="4" parent="1" name="Museo">
+      <Collation>Modern_Spanish_CI_AS</Collation>
+      <ObjectId>12</ObjectId>
+    </database>
+    <database id="5" parent="1" name="Pymes">
+      <ObjectId>8</ObjectId>
+    </database>
+    <database id="6" parent="1" name="TP-DLC">
+      <Collation>Modern_Spanish_CI_AS</Collation>
+      <Fingerprint>1.37717/00000000-0000-0000-0000-000000000000@CHONGOPC\SQLEXPRESS</Fingerprint>
+      <Grants>11|database||1|connect|G
+11|database||5|connect|G
+11|database||0|view any column encryption key definition|G
+11|database||0|view any column master key definition|G</Grants>
+      <ObjectId>11</ObjectId>
+      <PermissionsCheckSum>4255254626</PermissionsCheckSum>
+    </database>
+    <database id="7" parent="1" name="TP_Practico_GDA">
+      <ObjectId>10</ObjectId>
+    </database>
+    <database id="8" parent="1" name="_ERRORES_3k3">
+      <ObjectId>6</ObjectId>
+    </database>
+    <database id="9" parent="1" name="almacen">
+      <Fingerprint>1.37717/00000000-0000-0000-0000-000000000000@CHONGOPC\SQLEXPRESS</Fingerprint>
+      <Grants>5|database||1|connect|G
+5|database||5|connect|G
+5|database||0|view any column encryption key definition|G
+5|database||0|view any column master key definition|G</Grants>
+      <ObjectId>5</ObjectId>
+      <PermissionsCheckSum>4255254626</PermissionsCheckSum>
+    </database>
+    <database id="10" parent="1" name="master">
+      <Collation>Modern_Spanish_CI_AS</Collation>
+      <Current>1</Current>
+      <Fingerprint>1.37717/00000000-0000-0000-0000-000000000000@CHONGOPC\SQLEXPRESS</Fingerprint>
+      <Grants>1|database||1|connect|G
+1|database||2|connect|G
+1|database||5|connect|G
+1|database||6|connect|G
+1|database||7|connect|G
+1|database||6|execute|G
+1|database||0|view any column encryption key definition|G
+1|database||0|view any column master key definition|G</Grants>
+      <ObjectId>1</ObjectId>
+      <PermissionsCheckSum>9057742347</PermissionsCheckSum>
+    </database>
+    <database id="11" parent="1" name="model">
+      <Collation>Modern_Spanish_CI_AS</Collation>
+      <ObjectId>3</ObjectId>
+    </database>
+    <database id="12" parent="1" name="msdb">
+      <Collation>Modern_Spanish_CI_AS</Collation>
+      <ObjectId>4</ObjectId>
+    </database>
+    <database id="13" parent="1" name="tempdb">
+      <Collation>Modern_Spanish_CI_AS</Collation>
+      <ObjectId>2</ObjectId>
+    </database>
+    <linked-server id="14" parent="1" name="CHONGOPC\SQLEXPRESS">
+      <DataSource>CHONGOPC\SQLEXPRESS</DataSource>
+      <Product>SQL Server</Product>
+      <ProviderName>SQLNCLI</ProviderName>
+    </linked-server>
+    <login id="15" parent="1" name="sa">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>1</ObjectId>
+    </login>
+    <login id="16" parent="1" name="public">
+      <Enabled>1</Enabled>
+      <ObjectId>2</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="17" parent="1" name="sysadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>3</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="18" parent="1" name="securityadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>4</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="19" parent="1" name="serveradmin">
+      <Enabled>1</Enabled>
+      <ObjectId>5</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="20" parent="1" name="setupadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>6</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="21" parent="1" name="processadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>7</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="22" parent="1" name="diskadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>8</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="23" parent="1" name="dbcreator">
+      <Enabled>1</Enabled>
+      <ObjectId>9</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="24" parent="1" name="bulkadmin">
+      <Enabled>1</Enabled>
+      <ObjectId>10</ObjectId>
+      <Type>server-role</Type>
+    </login>
+    <login id="25" parent="1" name="##MS_SQLResourceSigningCertificate##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>101</ObjectId>
+      <Type>certificate-mapped-login</Type>
+    </login>
+    <login id="26" parent="1" name="##MS_SQLReplicationSigningCertificate##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>102</ObjectId>
+      <Type>certificate-mapped-login</Type>
+    </login>
+    <login id="27" parent="1" name="##MS_SQLAuthenticatorCertificate##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>103</ObjectId>
+      <Type>certificate-mapped-login</Type>
+    </login>
+    <login id="28" parent="1" name="##MS_PolicySigningCertificate##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>105</ObjectId>
+      <Type>certificate-mapped-login</Type>
+    </login>
+    <login id="29" parent="1" name="##MS_SmoExtendedSigningCertificate##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>106</ObjectId>
+      <Type>certificate-mapped-login</Type>
+    </login>
+    <login id="30" parent="1" name="##MS_PolicyEventProcessingLogin##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <ObjectId>256</ObjectId>
+    </login>
+    <login id="31" parent="1" name="##MS_PolicyTsqlExecutionLogin##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <ObjectId>257</ObjectId>
+    </login>
+    <login id="32" parent="1" name="##MS_AgentSigningCertificate##">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>258</ObjectId>
+      <Type>certificate-mapped-login</Type>
+    </login>
+    <login id="33" parent="1" name="CHONGOPC\ChongoNator">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>259</ObjectId>
+      <Type>windows-login</Type>
+    </login>
+    <login id="34" parent="1" name="NT SERVICE\SQLWriter">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>260</ObjectId>
+      <Type>windows-login</Type>
+    </login>
+    <login id="35" parent="1" name="NT SERVICE\Winmgmt">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>261</ObjectId>
+      <Type>windows-login</Type>
+    </login>
+    <login id="36" parent="1" name="NT Service\MSSQL$SQLEXPRESS">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>262</ObjectId>
+      <Type>windows-login</Type>
+    </login>
+    <login id="37" parent="1" name="BUILTIN\Usuarios">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>263</ObjectId>
+      <Type>windows-group</Type>
+    </login>
+    <login id="38" parent="1" name="NT AUTHORITY\SYSTEM">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>264</ObjectId>
+      <Type>windows-login</Type>
+    </login>
+    <login id="39" parent="1" name="NT SERVICE\SQLTELEMETRY$SQLEXPRESS">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>265</ObjectId>
+      <Type>windows-login</Type>
+    </login>
+    <login id="40" parent="1" name="chongo">
+      <DefaultDatabase>master</DefaultDatabase>
+      <Enabled>1</Enabled>
+      <ObjectId>266</ObjectId>
+    </login>
+    <role id="41" parent="6" name="public">
+      <AuthType>none</AuthType>
+      <ObjectId>0</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="42" parent="6" name="dbo">
+      <AuthType>windows</AuthType>
+      <DefaultSchema>dbo</DefaultSchema>
+      <ObjectId>1</ObjectId>
+      <Type>windows-user</Type>
+    </role>
+    <role id="43" parent="6" name="guest">
+      <AuthType>none</AuthType>
+      <DefaultSchema>guest</DefaultSchema>
+      <ObjectId>2</ObjectId>
+    </role>
+    <role id="44" parent="6" name="INFORMATION_SCHEMA">
+      <AuthType>none</AuthType>
+      <ObjectId>3</ObjectId>
+    </role>
+    <role id="45" parent="6" name="sys">
+      <AuthType>none</AuthType>
+      <ObjectId>4</ObjectId>
+    </role>
+    <role id="46" parent="6" name="chongo">
+      <AuthType>instance</AuthType>
+      <DefaultSchema>dbo</DefaultSchema>
+      <ObjectId>5</ObjectId>
+    </role>
+    <role id="47" parent="6" name="db_owner">
+      <AuthType>none</AuthType>
+      <ObjectId>16384</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="48" parent="6" name="db_accessadmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16385</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="49" parent="6" name="db_securityadmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16386</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="50" parent="6" name="db_ddladmin">
+      <AuthType>none</AuthType>
+      <ObjectId>16387</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="51" parent="6" name="db_backupoperator">
+      <AuthType>none</AuthType>
+      <ObjectId>16389</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="52" parent="6" name="db_datareader">
+      <AuthType>none</AuthType>
+      <ObjectId>16390</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="53" parent="6" name="db_datawriter">
+      <AuthType>none</AuthType>
+      <ObjectId>16391</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="54" parent="6" name="db_denydatareader">
+      <AuthType>none</AuthType>
+      <ObjectId>16392</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <role id="55" parent="6" name="db_denydatawriter">
+      <AuthType>none</AuthType>
+      <ObjectId>16393</ObjectId>
+      <Type>database-role</Type>
+      <OwnerId>1</OwnerId>
+    </role>
+    <schema id="56" parent="6" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="57" parent="6" name="db_accessadmin">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.500</IntrospectionTimestamp>
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="58" parent="6" name="db_backupoperator">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.507</IntrospectionTimestamp>
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="59" parent="6" name="db_datareader">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.510</IntrospectionTimestamp>
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="60" parent="6" name="db_datawriter">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.517</IntrospectionTimestamp>
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="61" parent="6" name="db_ddladmin">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.520</IntrospectionTimestamp>
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="62" parent="6" name="db_denydatareader">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.527</IntrospectionTimestamp>
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="63" parent="6" name="db_denydatawriter">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.533</IntrospectionTimestamp>
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="64" parent="6" name="db_owner">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.537</IntrospectionTimestamp>
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="65" parent="6" name="db_securityadmin">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.543</IntrospectionTimestamp>
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="66" parent="6" name="dbo">
+      <Current>1</Current>
+      <DescriptionsCheckSum>12317508141</DescriptionsCheckSum>
+      <Grants>1589580701|||0|execute|G
+1589580701|||2|execute|D
+1605580758|||0|execute|G
+1605580758|||2|execute|D
+1621580815|||0|execute|G
+1621580815|||2|execute|D
+1637580872|||0|execute|G
+1637580872|||2|execute|D
+1653580929|||0|execute|G
+1653580929|||2|execute|D
+1669580986|||0|execute|G
+1669580986|||2|execute|D
+1685581043|||0|execute|G
+1685581043|||2|execute|D</Grants>
+      <IntrospectionTimestamp>2022-04-03.13:51:15.547</IntrospectionTimestamp>
+      <ObjectId>1</ObjectId>
+      <PermissionsCheckSum>18728780353</PermissionsCheckSum>
+    </schema>
+    <schema id="67" parent="6" name="guest">
+      <IntrospectionTimestamp>2022-04-03.13:51:15.610</IntrospectionTimestamp>
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="68" parent="6" name="sys">
+      <Grants>-599|||0|select|G
+-598|||0|select|G
+-596|||0|select|G
+-589|||0|select|G
+-588|||0|select|G
+-587|||0|select|G
+-586|||0|select|G
+-582|||0|select|G
+-580|||0|select|G
+-572|||0|select|G
+-571|||0|select|G
+-570|||0|select|G
+-569|||0|select|G
+-568|||0|select|G
+-567|||0|select|G
+-566|||0|select|G
+-565|||0|select|G
+-564|||0|select|G
+-563|||0|select|G
+-562|||0|select|G
+-561|||0|select|G
+-560|||0|select|G
+-559|||0|select|G
+-558|||0|select|G
+-557|||0|select|G
+-551|||0|select|G
+-550|||0|select|G
+-549|||0|select|G
+-541|||0|select|G
+-540|||0|select|G
+-539|||0|select|G
+-538|||0|select|G
+-537|||0|select|G
+-536|||0|select|G
+-535|||0|select|G
+-519|||0|select|G
+-518|||0|select|G
+-517|||0|select|G
+-516|||0|select|G
+-515|||0|select|G
+-514|||0|select|G
+-513|||0|select|G
+-505|||0|select|G
+-504|||0|select|G
+-503|||0|select|G
+-502|||0|select|G
+-501|||0|select|G
+-500|||0|select|G
+-499|||0|select|G
+-498|||0|select|G
+-497|||0|select|G
+-496|||0|select|G
+-494|||0|select|G
+-489|||0|select|G
+-485|||0|select|G
+-484|||0|select|G
+-483|||0|select|G
+-482|||0|select|G
+-481|||0|select|G
+-480|||0|select|G
+-479|||0|select|G
+-478|||0|select|G
+-477|||0|select|G
+-476|||0|select|G
+-469|||0|select|G
+-468|||0|select|G
+-467|||0|select|G
+-466|||0|select|G
+-465|||0|select|G
+-464|||0|select|G
+-463|||0|select|G
+-462|||0|select|G
+-461|||0|select|G
+-460|||0|select|G
+-459|||0|select|G
+-458|||0|select|G
+-457|||0|select|G
+-456|||0|select|G
+-455|||0|select|G
+-454|||0|select|G
+-453|||0|select|G
+-452|||0|select|G
+-451|||0|select|G
+-450|||0|select|G
+-449|||0|select|G
+-448|||0|select|G
+-447|||0|select|G
+-446|||0|select|G
+-445|||0|select|G
+-444|||0|select|G
+-443|||0|select|G
+-442|||0|select|G
+-441|||0|select|G
+-440|||0|select|G
+-439|||0|select|G
+-438|||0|select|G
+-437|||0|select|G
+-436|||0|select|G
+-435|||0|select|G
+-434|||0|select|G
+-433|||0|select|G
+-432|||0|select|G
+-431|||0|select|G
+-430|||0|select|G
+-429|||0|select|G
+-428|||0|select|G
+-426|||0|select|G
+-425|||0|select|G
+-424|||0|select|G
+-423|||0|select|G
+-422|||0|select|G
+-421|||0|select|G
+-420|||0|select|G
+-419|||0|select|G
+-418|||0|select|G
+-417|||0|select|G
+-416|||0|select|G
+-415|||0|select|G
+-414|||0|select|G
+-413|||0|select|G
+-412|||0|select|G
+-411|||0|select|G
+-410|||0|select|G
+-409|||0|select|G
+-408|||0|select|G
+-407|||0|select|G
+-406|||0|select|G
+-405|||0|select|G
+-404|||0|select|G
+-403|||0|select|G
+-402|||0|select|G
+-401|||0|select|G
+-400|||0|select|G
+-399|||0|select|G
+-398|||0|select|G
+-397|||0|select|G
+-396|||0|select|G
+-395|||0|select|G
+-394|||0|select|G
+-393|||0|select|G
+-392|||0|select|G
+-391|||0|select|G
+-390|||0|select|G
+-389|||0|select|G
+-388|||0|select|G
+-387|||0|select|G
+-386|||0|select|G
+-385|||0|select|G
+-143|||0|select|G
+-142|||0|select|G
+-141|||0|select|G
+-140|||0|select|G
+-139|||0|select|G
+-138|||0|select|G
+-137|||0|select|G
+-136|||0|select|G
+-135|||0|select|G
+-134|||0|select|G
+-133|||0|select|G
+-132|||0|select|G
+-131|||0|select|G
+-130|||0|select|G
+-129|||0|select|G
+-107|||0|select|G
+-106|||0|select|G
+-105|||0|select|G
+-104|||0|select|G
+-103|||0|select|G
+-102|||0|select|G
+-101|||0|select|G</Grants>
+      <ObjectId>4</ObjectId>
+      <PermissionsCheckSum>360641128908</PermissionsCheckSum>
+    </schema>
+    <routine id="69" parent="66" name="fn_diagramobjects">
+      <CreatedTimestamp>2022-03-27.11:21:59.177</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.177</ModifiedTimestamp>
+      <ObjectId>1685581043</ObjectId>
+      <RoutineType>scalar-fun</RoutineType>
+      <SourceTextLength>1647</SourceTextLength>
+    </routine>
+    <routine id="70" parent="66" name="sp_alterdiagram">
+      <CreatedTimestamp>2022-03-27.11:21:59.170</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.170</ModifiedTimestamp>
+      <ObjectId>1653580929</ObjectId>
+      <RoutineType>proc</RoutineType>
+      <SourceTextLength>1501</SourceTextLength>
+    </routine>
+    <routine id="71" parent="66" name="sp_creatediagram">
+      <CreatedTimestamp>2022-03-27.11:21:59.157</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.157</ModifiedTimestamp>
+      <ObjectId>1621580815</ObjectId>
+      <RoutineType>proc</RoutineType>
+      <SourceTextLength>1223</SourceTextLength>
+    </routine>
+    <routine id="72" parent="66" name="sp_dropdiagram">
+      <CreatedTimestamp>2022-03-27.11:21:59.173</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.173</ModifiedTimestamp>
+      <ObjectId>1669580986</ObjectId>
+      <RoutineType>proc</RoutineType>
+      <SourceTextLength>896</SourceTextLength>
+    </routine>
+    <routine id="73" parent="66" name="sp_helpdiagramdefinition">
+      <CreatedTimestamp>2022-03-27.11:21:59.153</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.153</ModifiedTimestamp>
+      <ObjectId>1605580758</ObjectId>
+      <RoutineType>proc</RoutineType>
+      <SourceTextLength>921</SourceTextLength>
+    </routine>
+    <routine id="74" parent="66" name="sp_helpdiagrams">
+      <CreatedTimestamp>2022-03-27.11:21:59.150</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.150</ModifiedTimestamp>
+      <ObjectId>1589580701</ObjectId>
+      <RoutineType>proc</RoutineType>
+      <SourceTextLength>658</SourceTextLength>
+    </routine>
+    <routine id="75" parent="66" name="sp_renamediagram">
+      <CreatedTimestamp>2022-03-27.11:21:59.160</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.160</ModifiedTimestamp>
+      <ObjectId>1637580872</ObjectId>
+      <RoutineType>proc</RoutineType>
+      <SourceTextLength>1721</SourceTextLength>
+    </routine>
+    <routine id="76" parent="66" name="sp_upgraddiagrams">
+      <CreatedTimestamp>2022-03-27.11:21:59.127</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.127</ModifiedTimestamp>
+      <ObjectId>1525580473</ObjectId>
+      <RoutineType>proc</RoutineType>
+      <SourceTextLength>1463</SourceTextLength>
+    </routine>
+    <table id="77" parent="66" name="Documento">
+      <CreatedTimestamp>2021-04-12.17:36:06.950</CreatedTimestamp>
+      <ModifiedTimestamp>2022-03-27.13:40:33.090</ModifiedTimestamp>
+      <ObjectId>1445580188</ObjectId>
+    </table>
+    <table id="78" parent="66" name="Posteo">
+      <CreatedTimestamp>2021-04-12.17:36:06.943</CreatedTimestamp>
+      <ModifiedTimestamp>2022-03-27.16:37:27.010</ModifiedTimestamp>
+      <ObjectId>1413580074</ObjectId>
+    </table>
+    <table id="79" parent="66" name="Vocabulario">
+      <CreatedTimestamp>2021-04-12.17:36:06.937</CreatedTimestamp>
+      <ModifiedTimestamp>2022-03-27.13:40:32.800</ModifiedTimestamp>
+      <ObjectId>1381579960</ObjectId>
+    </table>
+    <table id="80" parent="66" name="sysdiagrams">
+      <CreatedTimestamp>2022-03-27.11:21:59.143</CreatedTimestamp>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <ModifiedTimestamp>2022-03-27.11:21:59.143</ModifiedTimestamp>
+      <ObjectId>1541580530</ObjectId>
+    </table>
+    <argument id="81" parent="69">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="82" parent="70" name="@diagramname">
+      <DataType>sysname|0s</DataType>
+      <Position>1</Position>
+    </argument>
+    <argument id="83" parent="70" name="@owner_id">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>null</DefaultExpression>
+      <Position>2</Position>
+    </argument>
+    <argument id="84" parent="70" name="@version">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </argument>
+    <argument id="85" parent="70" name="@definition">
+      <DataType>varbinary(max)|0s</DataType>
+      <Position>4</Position>
+    </argument>
+    <argument id="86" parent="71" name="@diagramname">
+      <DataType>sysname|0s</DataType>
+      <Position>1</Position>
+    </argument>
+    <argument id="87" parent="71" name="@owner_id">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>null</DefaultExpression>
+      <Position>2</Position>
+    </argument>
+    <argument id="88" parent="71" name="@version">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </argument>
+    <argument id="89" parent="71" name="@definition">
+      <DataType>varbinary(max)|0s</DataType>
+      <Position>4</Position>
+    </argument>
+    <argument id="90" parent="72" name="@diagramname">
+      <DataType>sysname|0s</DataType>
+      <Position>1</Position>
+    </argument>
+    <argument id="91" parent="72" name="@owner_id">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>null</DefaultExpression>
+      <Position>2</Position>
+    </argument>
+    <argument id="92" parent="73" name="@diagramname">
+      <DataType>sysname|0s</DataType>
+      <Position>1</Position>
+    </argument>
+    <argument id="93" parent="73" name="@owner_id">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>null</DefaultExpression>
+      <Position>2</Position>
+    </argument>
+    <argument id="94" parent="74" name="@diagramname">
+      <DataType>sysname|0s</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+      <Position>1</Position>
+    </argument>
+    <argument id="95" parent="74" name="@owner_id">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+      <Position>2</Position>
+    </argument>
+    <argument id="96" parent="75" name="@diagramname">
+      <DataType>sysname|0s</DataType>
+      <Position>1</Position>
+    </argument>
+    <argument id="97" parent="75" name="@owner_id">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>null</DefaultExpression>
+      <Position>2</Position>
+    </argument>
+    <argument id="98" parent="75" name="@new_diagramname">
+      <DataType>sysname|0s</DataType>
+      <Position>3</Position>
+    </argument>
+    <column id="99" parent="77" name="id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="100" parent="77" name="path">
+      <DataType>varchar(255 char)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="101" parent="77" name="nombre">
+      <DataType>varchar(255 char)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="102" parent="77" name="PK_DOCUMENTO">
+      <Clustering>1</Clustering>
+      <ColNames>id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="103" parent="77" name="PK_DOCUMENTO">
+      <ColNames>id</ColNames>
+      <CreatedTimestamp>2021-04-12.17:36:06.953</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-12.17:36:06.953</ModifiedTimestamp>
+      <ObjectId>1461580245</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_DOCUMENTO</UnderlyingIndexName>
+    </key>
+    <column id="104" parent="78" name="idVocabulario">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="105" parent="78" name="idDocument">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="106" parent="78" name="frecPalabra">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="107" parent="78" name="peso">
+      <DataType>int|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="108" parent="78" name="Posteo_fk0">
+      <ColNames>idVocabulario</ColNames>
+      <CreatedTimestamp>2021-04-12.17:36:06.957</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-12.17:36:06.957</ModifiedTimestamp>
+      <ObjectId>1477580302</ObjectId>
+      <OnUpdate>cascade</OnUpdate>
+      <RefColNames>id</RefColNames>
+      <RefKeyName>PK_VOCAVULARIO</RefKeyName>
+      <RefTableId>1381579960</RefTableId>
+      <RefTableName>Vocabulario</RefTableName>
+    </foreign-key>
+    <foreign-key id="109" parent="78" name="Posteo_fk1">
+      <ColNames>idDocument</ColNames>
+      <CreatedTimestamp>2021-04-12.17:36:06.960</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-12.17:36:06.960</ModifiedTimestamp>
+      <ObjectId>1493580359</ObjectId>
+      <OnUpdate>cascade</OnUpdate>
+      <RefColNames>id</RefColNames>
+      <RefKeyName>PK_DOCUMENTO</RefKeyName>
+      <RefTableId>1445580188</RefTableId>
+      <RefTableName>Documento</RefTableName>
+    </foreign-key>
+    <index id="110" parent="78" name="PK_POSTEO">
+      <Clustering>1</Clustering>
+      <ColNames>idVocabulario</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="111" parent="78" name="PK_POSTEO">
+      <ColNames>idVocabulario</ColNames>
+      <CreatedTimestamp>2021-04-12.17:36:06.947</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-12.17:36:06.947</ModifiedTimestamp>
+      <ObjectId>1429580131</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_POSTEO</UnderlyingIndexName>
+    </key>
+    <column id="112" parent="79" name="id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="113" parent="79" name="palabra">
+      <DataType>varchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="114" parent="79" name="cantDocumentos">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="115" parent="79" name="maxFrecuenciaPalabra">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <index id="116" parent="79" name="PK_VOCAVULARIO">
+      <Clustering>1</Clustering>
+      <ColNames>id</ColNames>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="117" parent="79" name="PK_VOCAVULARIO">
+      <ColNames>id</ColNames>
+      <CreatedTimestamp>2021-04-12.17:36:06.940</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-12.17:36:06.940</ModifiedTimestamp>
+      <ObjectId>1397580017</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_VOCAVULARIO</UnderlyingIndexName>
+    </key>
+    <column id="118" parent="80" name="name">
+      <DataType>sysname|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="119" parent="80" name="principal_id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="120" parent="80" name="diagram_id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <SequenceIdentity>1(2)</SequenceIdentity>
+    </column>
+    <column id="121" parent="80" name="version">
+      <DataType>int|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="122" parent="80" name="definition">
+      <DataType>varbinary(max)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <index id="123" parent="80" name="PK__sysdiagr__C2B05B613803877F">
+      <Clustering>1</Clustering>
+      <ColNames>diagram_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Position>1</Position>
+      <Unique>1</Unique>
+    </index>
+    <index id="124" parent="80" name="UK_principal_name">
+      <ColNames>principal_id
+name</ColNames>
+      <Position>2</Position>
+      <Unique>1</Unique>
+    </index>
+    <key id="125" parent="80" name="PK__sysdiagr__C2B05B613803877F">
+      <ColNames>diagram_id</ColNames>
+      <CreatedTimestamp>2022-03-27.11:21:59.147</CreatedTimestamp>
+      <ModifiedTimestamp>2022-03-27.11:21:59.147</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>1557580587</ObjectId>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK__sysdiagr__C2B05B613803877F</UnderlyingIndexName>
+    </key>
+    <key id="126" parent="80" name="UK_principal_name">
+      <ColNames>principal_id
+name</ColNames>
+      <CreatedTimestamp>2022-03-27.11:21:59.150</CreatedTimestamp>
+      <ModifiedTimestamp>2022-03-27.11:21:59.150</ModifiedTimestamp>
+      <ObjectId>1573580644</ObjectId>
+      <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

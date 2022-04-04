@@ -18,37 +18,56 @@ public class Indexar {
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
         Scanner scanner = new Scanner(System.in);
+
         Indexador indexador = new Indexador();
-        indexador.indexar(directoryPath());
+        String path = directoryPath();
 
-        while (true) {
-            System.out.println("Opciones\n");
-            System.out.println("1 - Mostrar Vocabulario");
-            System.out.println("2 - Mostrar Documentos");
-            System.out.println("3 - Mostrar Posteos");
-            System.out.println("4 - Salir");
-
-            System.out.print("\nIngrese una opcion: ");
-            int opcion = scanner.nextInt();
-            System.out.println("\n");
-
-            switch (opcion) {
-                case 1:
-                    System.out.println("Vocabulario: \n");
-                    indexador.getVocabulario().forEach((integer, termino) -> System.out.println(termino));
-                    break;
-                case 2:
-                    System.out.println("Documentos: \n");
-                    indexador.getDocumentos().forEach(System.out::println);
-                    break;
-                case 3:
-                    System.out.println("Posteos: \n");
-                    indexador.getPosteos().forEach(System.out::println);
-                    break;
-                default:
-                    return;
+        Runnable indexar = () -> {
+            try {
+                indexador.indexar(path);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             }
-        }
+        };
+
+
+        Runnable menu = () -> {
+            HashSet<Documento> documentos = indexador.getDocumentos();
+            Hashtable<Integer,Vocabulario> vocabulario = indexador.getVocabulario();
+            Hashtable<Integer, Posteo> posteos = indexador.getPosteos();
+
+            while (true) {
+                System.out.println("Opciones\n");
+                System.out.println("1 - Mostrar Vocabulario");
+                System.out.println("2 - Mostrar Documentos");
+                System.out.println("3 - Mostrar Posteos");
+                System.out.println("4 - Salir");
+
+                System.out.print("\nIngrese una opcion: ");
+                int opcion = scanner.nextInt();
+                System.out.println("\n");
+
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Vocabulario: \n");
+                        vocabulario.forEach((integer, termino) -> System.out.println(termino));
+                        break;
+                    case 2:
+                        System.out.println("Documentos: \n");
+                        documentos.forEach(System.out::println);
+                        break;
+                    case 3:
+                        System.out.println("Posteos: \n");
+                        posteos.forEach((integer, termino) -> System.out.println(termino));
+                        break;
+                    default:
+                        return;
+                }
+            }
+        };
+
+        indexar.run();
+        menu.run();
     }
 
     /**

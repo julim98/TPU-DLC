@@ -14,6 +14,13 @@ public class Posteo {
         this.peso = 0;
     }
 
+    public Posteo(Vocabulario vocabulario, Documento documento, int frecuencia) {
+        this.vocabulario = vocabulario;
+        this.documento = documento;
+        this.frecuencia = frecuencia;
+        this.peso = 0;
+    }
+
     public Vocabulario getVocabulario() {
         return vocabulario;
     }

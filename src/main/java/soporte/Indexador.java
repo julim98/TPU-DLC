@@ -4,7 +4,6 @@ import clases.Documento;
 import clases.Posteo;
 import clases.Vocabulario;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
@@ -17,7 +16,7 @@ public class Indexador {
     private static HashSet<Documento> documentos = new HashSet<>();
     private static Hashtable<Integer,Vocabulario> vocabularioAux;
     private static Hashtable<Integer,Vocabulario> vocabulario = new Hashtable<>();
-    private static HashSet<Posteo> posteos = new HashSet<>();
+    private static Hashtable<Integer,Posteo> posteos = new Hashtable<>();
 
     /**
      * Comienza la indexacion de los archivos
@@ -27,18 +26,14 @@ public class Indexador {
 
         Scanner docScan;
         File carpeta = new File(ruta);
-
         String palabra;
-        System.out.println("Comenzando la indexacion de lo documentos\n" +
-                "Por favor espere mientras se completa");
-
         int i = 0;
 
         //Recorre cada documento txt de la carpeta
-        for (File docFile: Objects.requireNonNull(carpeta.listFiles((File pathname) -> pathname.getName().endsWith(".txt")))) {
+        for (File docFile: Objects.requireNonNull(carpeta.listFiles((File pathname) -> pathname.getName().endsWith(".txt")))){
 
             vocabularioAux = new Hashtable<>();
-            Documento documento = new Documento(docFile.getPath(), docFile.getName());
+            Documento documento = new Documento(docFile.getName(),docFile.getPath());
             documentos.add(documento);
             docScan = new Scanner(docFile);
 
@@ -57,35 +52,36 @@ public class Indexador {
                 } else {
                     Vocabulario newTermino = new Vocabulario(palabra);
                     vocabularioAux.put(key, newTermino);
-                    posteos.add(new Posteo(newTermino, documento));
                 }
             }
 
             //Aca se controla si los terminos indexados en el documento ya se encontraban en el vocabulario y si lo
             // estaban se guada el de mayor frecuencia
-            if (!vocabulario.isEmpty())
-            {
+            if (!vocabulario.isEmpty()) {
                 int maxFrecPalabra;
                 int maxFrecPalabraAux;
 
-                for (Vocabulario terminoAux: vocabularioAux.values()) {
+                for (Vocabulario terminoAux : vocabularioAux.values()) {
+
+                    //Se crea el poste del temino junto con el documento en el que aparece y la frecuencia en este
+                    Posteo posteo = new Posteo(terminoAux, documento, terminoAux.getMaxFrecuenciaPalabra());
+                    posteos.put(posteo.hashCode(), posteo);
+
                     Vocabulario termino = vocabulario.get(terminoAux.getPalabra().hashCode());
-                    if (termino != null)
-                    {
+                    if (termino != null) {
                         termino.increaseCantDoc();
 
                         maxFrecPalabra = termino.getMaxFrecuenciaPalabra();
                         maxFrecPalabraAux = terminoAux.getMaxFrecuenciaPalabra();
-                        if (maxFrecPalabra < maxFrecPalabraAux)
-                        {
+
+                        if (maxFrecPalabra < maxFrecPalabraAux) {
                             termino.setMaxFrecuenciaPalabra(maxFrecPalabraAux);
                         }
-                    }
-                    else {
+                    } else {
                         vocabulario.put(terminoAux.getPalabra().hashCode(), terminoAux);
                     }
                 }
-            }else {
+            } else {
                 vocabulario = new Hashtable<>(vocabularioAux);
             }
         }
@@ -99,7 +95,13 @@ public class Indexador {
         return vocabulario;
     }
 
-    public HashSet<Posteo> getPosteos() {
+    public Hashtable<Integer, Posteo> getPosteos() {
         return posteos;
     }
+
+
+    public boolean checkChanges(){
+        return true;
+    }
+
 }

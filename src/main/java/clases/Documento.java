@@ -2,12 +2,20 @@ package clases;
 
 public class Documento {
 
-    private String path;
     private String nombre;
+    private String path;
 
 
-    public Documento(String path, String nombre) {
+    public Documento(String nombre, String path) {
         this.path = path;
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -19,17 +27,10 @@ public class Documento {
         this.path = path;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     @Override
     public String toString() {
-        return  "path: '" + path + '\'' +
-                ", nombre: '" + nombre + '\'';
+        return "nombre: '" + nombre + '\'' +
+                ", path: '" + path;
     }
 }
