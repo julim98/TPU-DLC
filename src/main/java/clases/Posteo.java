@@ -68,6 +68,6 @@ public class Posteo {
         return  "vocabulario: " + vocabulario.getPalabra() +
                 ", documento: " + documento.getNombre() +
                 ", frecuencia: " + frecuencia +
-                ", peso=" + peso ;
+                ", peso: " + peso ;
     }
 }

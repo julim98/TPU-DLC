@@ -27,7 +27,7 @@ public class Indexador {
         Scanner docScan;
         File carpeta = new File(ruta);
         String palabra;
-        int i = 0;
+        int i = 1;
 
         //Recorre cada documento txt de la carpeta
         for (File docFile: Objects.requireNonNull(carpeta.listFiles((File pathname) -> pathname.getName().endsWith(".txt")))){

@@ -26,13 +26,13 @@ public class IndexarAlt {
                 if ((value >= 48 & value <= 57) || (value >= 65 & value <= 90) || (value >= 97 && value <= 122) ||
                     (value >= 128 & value <= 165) || (value >= 208 & value <= 216) || (value >= 224 & value <= 237))
                 {
-                    break;
+                    return s;
                 }
             }
-            if (s.endsWith(",")) {
-                return s.replace(",", "");
-            }
-            return "";
+            /*if (s.endsWith(",") || s.endsWith(".") || s.endsWith(";") || s.endsWith("?") || s.endsWith("!") || s.endsWith(":")) {
+                 s = s.replace(".", "");
+            }*/
+            return null;
         });
         //palabras.forEach(System.out::println);
 
