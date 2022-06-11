@@ -6,10 +6,9 @@ import clases.Vocabulario;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Objects;
-import java.util.Scanner;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 public class Indexador {
 
@@ -22,28 +21,36 @@ public class Indexador {
      * Comienza la indexacion de los archivos
      * @throws FileNotFoundException
      */
-    public void indexar(String ruta) throws FileNotFoundException {
+    public void indexar(String ruta) throws IOException {
 
-        Scanner docScan;
+        Scanner scanDocumentoActual;
         File carpeta = new File(ruta);
         String palabra;
         int i = 1;
 
-        //Recorre cada documento txt de la carpeta
-        for (File docFile: Objects.requireNonNull(carpeta.listFiles((File pathname) -> pathname.getName().endsWith(".txt")))){
+        //Recorre cada documento ".txt" de la carpeta
+        for (File file: Objects.requireNonNull(carpeta.listFiles((File pathname) -> pathname.getName().endsWith(".txt")))){
 
             vocabularioAux = new Hashtable<>();
-            Documento documento = new Documento(docFile.getName(),docFile.getPath());
-            documentos.add(documento);
-            docScan = new Scanner(docFile);
 
-            //System.out.println("Comenzando lectuda del ducumento n°: "+ i + " " + docFile.getName());
+            //Creo una Instancia de Documento con las datos del archivo que se esta leyendo
+            Documento documento = new Documento(file.getName(),file.getPath(), new Date(file.lastModified()));
+
+            //Se agrega el documento al verctor de documentos
+            documentos.add(documento);
+
+            //Se crea un Scanner que nos permitira leer el documento actual
+            scanDocumentoActual = new Scanner(file, StandardCharsets.ISO_8859_1);
+
+            //System.out.println("Comenzando lectuda del ducumento n°: "+ i + " " + file.getName());
             i++;
 
             //Recorre cada palabra del documento
-            while (docScan.hasNext()) {
+            while (scanDocumentoActual.hasNext()) {
 
-                palabra = docScan.next();
+                palabra = scanDocumentoActual.next();
+
+                //Obtengo el hashcode de la palabra actual
                 int key = palabra.hashCode();
 
                 //Pregunta si la palabra ya se encuentra y si lo esta aumenta su frecuencia y si no la agrega
@@ -57,6 +64,7 @@ public class Indexador {
 
             //Aca se controla si los terminos indexados en el documento ya se encontraban en el vocabulario y si lo
             // estaban se guada el de mayor frecuencia
+
             if (!vocabulario.isEmpty()) {
                 int maxFrecPalabra;
                 int maxFrecPalabraAux;
@@ -86,6 +94,10 @@ public class Indexador {
             }
         }
     }
+
+
+
+
 
     public HashSet<Documento> getDocumentos() {
         return documentos;

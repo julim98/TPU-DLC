@@ -11,6 +11,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.util.*;
 
 public class Indexar {
@@ -25,13 +26,14 @@ public class Indexar {
         Runnable indexar = () -> {
             try {
                 indexador.indexar(path);
-            } catch (FileNotFoundException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         };
 
 
         Runnable menu = () -> {
+
             HashSet<Documento> documentos = indexador.getDocumentos();
             Hashtable<Integer,Vocabulario> vocabulario = indexador.getVocabulario();
             Hashtable<Integer, Posteo> posteos = indexador.getPosteos();

@@ -2,6 +2,7 @@ package clases;
 
 public class Vocabulario {
 
+    private int id_palabra;
     private String palabra;
     private int cantDocumentos;
     private int maxFrecuenciaPalabra;
@@ -16,6 +17,13 @@ public class Vocabulario {
         this.palabra = palabra;
         this.cantDocumentos = 1;
         this.maxFrecuenciaPalabra = 1;
+    }
+
+    public Vocabulario(int id_palabra, String palabra, int cantDocumentos, int maxFrecuenciaPalabra) {
+        this.id_palabra = id_palabra;
+        this.palabra = palabra;
+        this.cantDocumentos = cantDocumentos;
+        this.maxFrecuenciaPalabra = maxFrecuenciaPalabra;
     }
 
     public String getPalabra() {

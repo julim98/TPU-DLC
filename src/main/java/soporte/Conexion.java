@@ -2,7 +2,7 @@ package soporte;
 
 import java.sql.*;
 
-public class Coneccion {
+public class Conexion {
 
     public static final String POSTGRES_DRIVER_NAME = "org.postgresql.Driver";
     public static final String MYSQL_DRIVER_NAME = "com.mysql.jdbc.Driver";

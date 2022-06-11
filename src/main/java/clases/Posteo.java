@@ -2,31 +2,31 @@ package clases;
 
 public class Posteo {
 
-    private Vocabulario vocabulario;
+    private Vocabulario palabra;
     private Documento documento;
     private int frecuencia;
     private double peso;
 
-    public Posteo(Vocabulario vocabulario, Documento documento) {
-        this.vocabulario = vocabulario;
+    public Posteo(Vocabulario palabra, Documento documento) {
+        this.palabra = palabra;
         this.documento = documento;
         this.frecuencia = 1;
         this.peso = 0;
     }
 
-    public Posteo(Vocabulario vocabulario, Documento documento, int frecuencia) {
-        this.vocabulario = vocabulario;
+    public Posteo(Vocabulario palabra, Documento documento, int frecuencia) {
+        this.palabra = palabra;
         this.documento = documento;
         this.frecuencia = frecuencia;
         this.peso = 0;
     }
 
-    public Vocabulario getVocabulario() {
-        return vocabulario;
+    public Vocabulario getPalabra() {
+        return palabra;
     }
 
-    public void setVocabulario(Vocabulario vocabulario) {
-        this.vocabulario = vocabulario;
+    public void setPalabra(Vocabulario palabra) {
+        this.palabra = palabra;
     }
 
     public Documento getDocumento() {
@@ -65,7 +65,7 @@ public class Posteo {
 
     @Override
     public String toString() {
-        return  "vocabulario: " + vocabulario.getPalabra() +
+        return  "vocabulario: " + palabra.getPalabra() +
                 ", documento: " + documento.getNombre() +
                 ", frecuencia: " + frecuencia +
                 ", peso: " + peso ;
