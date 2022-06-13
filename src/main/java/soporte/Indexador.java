@@ -71,10 +71,6 @@ public class Indexador {
 
                 for (Vocabulario terminoAux : vocabularioAux.values()) {
 
-                    //Se crea el poste del temino junto con el documento en el que aparece y la frecuencia en este
-                    Posteo posteo = new Posteo(terminoAux, documento, terminoAux.getMaxFrecuenciaPalabra());
-                    posteos.put(posteo.hashCode(), posteo);
-
                     Vocabulario termino = vocabulario.get(terminoAux.getPalabra().hashCode());
                     if (termino != null) {
                         termino.increaseCantDoc();
@@ -91,12 +87,13 @@ public class Indexador {
                 }
             } else {
                 vocabulario = new Hashtable<>(vocabularioAux);
-                for (Vocabulario terminoAux : vocabularioAux.values()) {
-
-                    //Se crea el poste del temino junto con el documento en el que aparece y la frecuencia en este
-                    Posteo posteo = new Posteo(terminoAux, documento, terminoAux.getMaxFrecuenciaPalabra());
-                    posteos.put(posteo.hashCode(), posteo);
                 }
+
+            for (Integer key : vocabularioAux.keySet()) {
+                //Se crea el posteo del temino junto con el documento en el que aparece y la frecuencia en este
+                Vocabulario terminoAux = vocabulario.get(key);
+                Posteo posteo = new Posteo(terminoAux, documento, terminoAux.getMaxFrecuenciaPalabra());
+                posteos.put(posteo.hashCode(), posteo);
             }
         }
         actualizarPeso();
