@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class Documento {
 
+    public static int cantidadDocumentos;
     private int idDocumento;
     private String nombre;
     private String path;
@@ -20,6 +21,7 @@ public class Documento {
         this.nombre = nombre;
         this.path = path;
         this.fechaHoraActualizacion = fechaHoraActualizacion;
+        Documento.cantidadDocumentos += 1;
     }
 
     public int getIdDocumento() {

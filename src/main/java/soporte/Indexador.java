@@ -40,8 +40,8 @@ public class Indexador {
             documentos.add(documento);
 
             //Se crea un Scanner que nos permitira leer el documento actual
-            scanDocumentoActual = new Scanner(file, StandardCharsets.ISO_8859_1);
-
+//            scanDocumentoActual = new Scanner(file, StandardCharsets.ISO_8859_1);
+            scanDocumentoActual = new Scanner(file, StandardCharsets.UTF_8);
             //System.out.println("Comenzando lectuda del ducumento n°: "+ i + " " + file.getName());
             i++;
 
@@ -91,11 +91,16 @@ public class Indexador {
                 }
             } else {
                 vocabulario = new Hashtable<>(vocabularioAux);
+                for (Vocabulario terminoAux : vocabularioAux.values()) {
+
+                    //Se crea el poste del temino junto con el documento en el que aparece y la frecuencia en este
+                    Posteo posteo = new Posteo(terminoAux, documento, terminoAux.getMaxFrecuenciaPalabra());
+                    posteos.put(posteo.hashCode(), posteo);
+                }
             }
         }
+        actualizarPeso();
     }
-
-
 
 
 
@@ -116,4 +121,12 @@ public class Indexador {
         return true;
     }
 
+    private void actualizarPeso(){
+
+        // hay un problema con el vocabulario, en algunas palabras sale que sale en 1 documento cuando sale en 2, creo que se crean 2 veces la misma palabra.
+        for (Posteo p : posteos.values()
+             ) {
+            p.calcularPeso();
+        }
+    }
 }

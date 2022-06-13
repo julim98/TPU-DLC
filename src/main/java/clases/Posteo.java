@@ -2,6 +2,7 @@ package clases;
 
 public class Posteo {
 
+    private static double denomPeso = 0;
     private Vocabulario palabra;
     private Documento documento;
     private int frecuencia;
@@ -11,6 +12,7 @@ public class Posteo {
         this.palabra = palabra;
         this.documento = documento;
         this.frecuencia = 1;
+        Posteo.denomPeso += Math.log((double) Documento.cantidadDocumentos / palabra.getCantDocumentos());
         this.peso = 0;
     }
 
@@ -18,6 +20,7 @@ public class Posteo {
         this.palabra = palabra;
         this.documento = documento;
         this.frecuencia = frecuencia;
+        Posteo.denomPeso += Math.pow(Math.log((double) Documento.cantidadDocumentos / palabra.getCantDocumentos()), 2);
         this.peso = 0;
     }
 
@@ -53,15 +56,22 @@ public class Posteo {
         this.peso = peso;
     }
 
-    public void calcularPeso(int N, int n){
+    public static double getDenomPeso() {
+        double x = Math.sqrt(denomPeso);
+        return x;
+    }
 
-        this.peso = ((this.frecuencia * Math.log((double) N/n))/(Math.sqrt(Math.pow(suma(N, n), 2))));
+    public void calcularPeso(){
+        double x = this.frecuencia;
+        x *= (Math.log((double) (Documento.cantidadDocumentos / palabra.getCantDocumentos())));
+        x /= Math.sqrt(denomPeso);
+
+        this.peso = x;
     }
 
     public double suma(int N, int n){
         return frecuencia * Math.log((double) N/n);
     }
-
 
     @Override
     public String toString() {
