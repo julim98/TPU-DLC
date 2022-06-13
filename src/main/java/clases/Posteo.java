@@ -62,8 +62,8 @@ public class Posteo {
     }
 
     public void calcularPeso(){
-        double x = this.frecuencia;
-        x *= (Math.log((double) (Documento.cantidadDocumentos / palabra.getCantDocumentos())));
+        // devuelvo en x el valor del peso, haciendo primero el numerador y luego su denominador
+        double x = this.frecuencia * (Math.log((double) (Documento.cantidadDocumentos / palabra.getCantDocumentos())));
         x /= Math.sqrt(denomPeso);
 
         this.peso = x;

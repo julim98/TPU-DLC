@@ -96,6 +96,7 @@ public class Indexador {
                 posteos.put(posteo.hashCode(), posteo);
             }
         }
+        // despues de procesar todos los archivos actualiza el peso de los posteos
         actualizarPeso();
     }
 
@@ -120,10 +121,9 @@ public class Indexador {
 
     private void actualizarPeso(){
 
-        // hay un problema con el vocabulario, en algunas palabras sale que sale en 1 documento cuando sale en 2, creo que se crean 2 veces la misma palabra.
-        for (Posteo p : posteos.values()
-             ) {
-            p.calcularPeso();
-        }
+        // Por cada posteo se le pide que actualice su peso
+        for (Posteo p : posteos.values()) { p.calcularPeso(); }
     }
+
+
 }
