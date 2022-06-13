@@ -3,12 +3,14 @@ package soporte;
 import clases.Documento;
 import clases.Posteo;
 import clases.Vocabulario;
+import org.eclipse.persistence.config.ParameterDelimiterType;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Indexador {
 
@@ -40,8 +42,14 @@ public class Indexador {
             documentos.add(documento);
 
             //Se crea un Scanner que nos permitira leer el documento actual
-//            scanDocumentoActual = new Scanner(file, StandardCharsets.ISO_8859_1);
+            //scanDocumentoActual = new Scanner(file, StandardCharsets.ISO_8859_1);
+
             scanDocumentoActual = new Scanner(file, StandardCharsets.UTF_8);
+
+            // configuramos el patron con una expresion regular
+            Pattern pat = Pattern.compile("[.,; ]+");
+            scanDocumentoActual.useDelimiter(pat);
+
             //System.out.println("Comenzando lectuda del ducumento n°: "+ i + " " + file.getName());
             i++;
 
@@ -124,6 +132,4 @@ public class Indexador {
         // Por cada posteo se le pide que actualice su peso
         for (Posteo p : posteos.values()) { p.calcularPeso(); }
     }
-
-
 }
